@@ -1,0 +1,17 @@
+{
+    "name": "alessio/plog",
+    "type": "library",
+    "license": "APL-2.0",
+    "autoload": {
+        "psr-4": {
+            "plog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alessio Ferri",
+            "email": "alessio.ferri.3012@gmail.com"
+        }
+    ],
+    "require": {}
+}
