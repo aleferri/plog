@@ -30,21 +30,21 @@ class TeeLogger implements Logger {
 
     use LoggerHelper;
 
-    private $forwarded_a;
-    private $forwarded_b;
+    private $logs;
 
-    public function __construct(Logger $forwarded_a, Logger $forwarded_b) {
-        $this->forwarded_a = $forwarded_a;
-        $this->forwarded_b = $forwarded_b;
+    public function __construct( array $logs ) {
+        $this->logs = $logs;
     }
 
     public function flush(): void {
-        $this->forwarded_a->flush();
-        $this->forwarded_b->flush();
+        foreach ( $this->logs as $log ) {
+            $log->flush();
+        }
     }
 
-    public function log(int $level, string $message, array $info = []): void {
-        $this->forwarded_a->log( $level, $message, $info );
-        $this->forwarded_b->log( $level, $message, $info );
+    public function log( int $level, string $message, array $info = [] ): void {
+        foreach ( $this->logs as $log ) {
+            $log->log( $level, $message, $info );
+        }
     }
 }

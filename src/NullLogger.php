@@ -31,10 +31,10 @@ class NullLogger implements Logger {
     use LoggerHelper;
 
     public function flush(): void {
-
+        
     }
 
-    public function log(int $level, string $message, array $info = []): void {
-
+    public function log( int $level, string $message, array $info = [] ): void {
+        
     }
 }

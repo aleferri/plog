@@ -1,5 +1,5 @@
 {
-    "name": "alessio/plog",
+    "name": "mythread/plog",
     "type": "library",
     "license": "APL-2.0",
     "autoload": {

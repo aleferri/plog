@@ -37,5 +37,5 @@ interface LoggerAware {
      * Replace the current logger with the new one
      * @param Logger $logger not null
      */
-    public function set_logger(Logger $logger);
+    public function set_logger( Logger $logger );
 }

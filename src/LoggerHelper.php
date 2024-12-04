@@ -11,39 +11,39 @@ namespace plog;
 
 trait LoggerHelper {
 
-    public function emergency(string $message, array $info = []): void {
+    public function emergency( string $message, array $info = [] ): void {
         $this->log( 0, $message, $info );
     }
 
-    public function alert(string $message, array $info = []): void {
+    public function alert( string $message, array $info = [] ): void {
         $this->log( 1, $message, $info );
     }
 
-    public function critical(string $message, array $info = []): void {
+    public function critical( string $message, array $info = [] ): void {
         $this->log( 2, $message, $info );
     }
 
-    public function error(string $message, array $info = []): void {
+    public function error( string $message, array $info = [] ): void {
         $this->log( 3, $message, $info );
     }
 
-    public function warning(string $message, array $info = []): void {
+    public function warning( string $message, array $info = [] ): void {
         $this->log( 4, $message, $info );
     }
 
-    public function notice(string $message, array $info = []): void {
+    public function notice( string $message, array $info = [] ): void {
         $this->log( 5, $message, $info );
     }
 
-    public function info(string $message, array $info = []): void {
+    public function info( string $message, array $info = [] ): void {
         $this->log( 6, $message, $info );
     }
 
-    public function debug(string $message, array $info = []): void {
+    public function debug( string $message, array $info = [] ): void {
         $this->log( 7, $message, $info );
     }
 
-    protected function interpolate(string $message, array $info): string {
+    protected function interpolate( string $message, array $info ): string {
         $from = [];
         $into = [];
         foreach ( $info as $key => $val ) {
@@ -51,6 +51,6 @@ trait LoggerHelper {
             $into[] = $val;
         }
 
-        return str_replace( $from, $into, $message );
+        return \str_replace( $from, $into, $message );
     }
 }
